@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
 import menubar from "../resources/icons/menubar.svg"
 import Connect from "./Connect"
 import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
+
+    const [winscreens, setScreens] = useState(window.screen.width);
+    console.log(window.screen.width);
+
+    useEffect(() => {
+        window.onresize = () => {
+        setScreens(window.screen.width);
+        };
+    }, []);
+
 
     const handlemenu = () => {
         const menu = document.querySelector('.menu');
@@ -32,7 +43,7 @@ const Navbar = (props) => {
 
                 <Connect />
                
-                <div className="menu hidden md:hidden bg-[#1D1D1D]/90 absolute right-0 top-[62px] w-fit px-3 py-3.5 rounded-b-md">
+                <div className={` menu hidden md:hidden bg-[#1D1D1D]/90 absolute right-0 top-[62px] w-fit px-3 py-3.5 rounded-b-md ${winscreens >= 740 && "!hidden"}`}>
                     <Link to='/'><div onClick={handlemenu} className=" px-[4rem] py-1.5 mb-2.5 bg-[#D9D9D9]/10 rounded-lg cursor-pointer">
                         <p className="text-white text-[0.5rem] font-normal text-center">Home</p>
                     </div></Link>
