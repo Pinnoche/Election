@@ -1,0 +1,22 @@
+[
+    {
+        "id":0,
+        "election_name":"2019 Presidential Election",
+        "win_percent":"43.5%"
+    },
+     {
+        "id":1,
+        "election_name":"2020 Presidential Election",
+        "win_percent":"53.5%"
+    },
+     {
+        "id":2,
+        "election_name":"2021 Presidential Election",
+        "win_percent":"63.5%"
+    },
+     {
+        "id":3,
+        "election_name":"2022 Presidential Election",
+        "win_percent":"73.5%"
+    }
+]

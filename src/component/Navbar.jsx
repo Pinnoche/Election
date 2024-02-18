@@ -27,7 +27,7 @@ const Navbar = (props) => {
     }
 
     return (
-        <div className="px-5 pt-6 pb-3.5 md:px-16 lg:px-24 md:pt-7 md:pb-4 flex bg-[#1D1D1D]/90 items-center justify-between ">
+        <div className="px-5 pt-6 pb-3.5 md:px-16 lg:px-24 md:pt-7 md:pb-4 flex bg-[#1D1D1D]/90 items-center justify-between min-w-80">
             <div className="md:w-[27%] lg:w-[37%]">
                 <h1 className="text-white font-['Libre_Baskerville'] text-base md:text-2xl md:font-extrabold font-bold">E-Voting</h1>
             </div>

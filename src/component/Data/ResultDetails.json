@@ -1,0 +1,110 @@
+[
+    {
+        "ename":"2019 Presidential Election",
+        "total_vote":"11,754,239",
+        "mwin_percent":"43.5%",
+        "start_date":"Tue, 26 Feb, 2019  09:00 AM ",
+        "end_date":"Tue, 26 Feb, 2019  18:00 PM ",
+        "candidates":[
+            {
+                "id":0,
+                "vote":"5,113,094",
+                "win_percent":"43.5%",
+                "party":"APC"
+            },
+             {
+                "id":1,
+                "vote":"4,196,263",
+                "win_percent":"35.7%",
+                "party":"APC"
+            },
+             {
+                "id":2,
+                "vote":"2,444,882",
+                "win_percent":"20.8%",
+                "party":"APC"
+            }
+        ]
+    },
+ {
+        "ename":"2020 Presidential Election",
+        "total_vote":"11,754,239",
+        "mwin_percent":"53.5%",
+        "start_date":"Tue, 26 Feb, 2020  09:00 AM ",
+        "end_date":"Tue, 26 Feb, 2020  18:00 PM ",
+        "candidates":[
+            {
+                "id":0,
+                "vote":"5,113,094",
+                "win_percent":"43.5%",
+                "party":"APC"
+            },
+             {
+                "id":1,
+                "vote":"4,196,263",
+                "win_percent":"35.7%",
+                "party":"APC"
+            },
+             {
+                "id":2,
+                "vote":"2,444,882",
+                "win_percent":"20.8%",
+                "party":"APC"
+            }
+        ]
+    },
+     {
+        "ename":"2021 Presidential Election",
+        "total_vote":"11,754,239",
+        "mwin_percent":"63.5%",
+        "start_date":"Tue, 26 Feb, 2021  09:00 AM ",
+        "end_date":"Tue, 26 Feb, 2021  18:00 PM ",
+        "candidates":[
+            {
+                "id":0,
+                "vote":"5,113,094",
+                "win_percent":"43.5%",
+                "party":"APC"
+            },
+             {
+                "id":1,
+                "vote":"4,196,263",
+                "win_percent":"35.7%",
+                "party":"APC"
+            },
+             {
+                "id":2,
+                "vote":"2,444,882",
+                "win_percent":"20.8%",
+                "party":"APC"
+            }
+        ]
+    },
+     {
+        "ename":"2023 Presidential Election",
+        "total_vote":"11,754,239",
+        "mwin_percent":"73.5%",
+        "start_date":"Tue, 26 Feb, 2023  09:00 AM ",
+        "end_date":"Tue, 26 Feb, 2023  18:00 PM ",
+        "candidates":[
+            {
+                "id":0,
+                "vote":"5,113,094",
+                "win_percent":"43.5%",
+                "party":"APC"
+            },
+             {
+                "id":1,
+                "vote":"4,196,263",
+                "win_percent":"35.7%",
+                "party":"APC"
+            },
+             {
+                "id":2,
+                "vote":"2,444,882",
+                "win_percent":"20.8%",
+                "party":"APC"
+            }
+        ]
+    }
+]
