@@ -17,12 +17,17 @@ const Navbar = (props) => {
 
     const handlemenu = () => {
         const menu = document.querySelector('.menu');
+        const connect = document.querySelector(".connect");
+        const balances = document.querySelector(".balance");
          if (menu.style.display === "block") {
              menu.style.display = "none";
              
             } else {      
              menu.style.display = "block";
-            
+             connect.style.display = "none";
+             if(balances){
+                 balances.style.display = "none";
+                 }
             }
     }
 

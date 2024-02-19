@@ -13,7 +13,7 @@ function App(props) {
   const { user } = UseAuthContext();
 
   return (
-    <div className="App min-w-80">
+    <div className="App min-w-80 ">
 
         {<Navbar />}
          <Routes>

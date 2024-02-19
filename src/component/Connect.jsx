@@ -13,6 +13,7 @@ const Connect = (props) => {
 
     const handleconnect = () => {
         const connect = document.querySelector(".connect");
+        const menu = document.querySelector('.menu');
         const arrowup = document.querySelector(".arrowup");
         const arrowdown = document.querySelector(".arrowdown");
          if (connect.style.display === "block") {
@@ -21,6 +22,7 @@ const Connect = (props) => {
              arrowdown.style.display = "block";
             } else {      
              connect.style.display = "block";
+             menu.style.display = "none";
              arrowup.style.display = "block";
              arrowdown.style.display = "none";
             }
@@ -28,6 +30,7 @@ const Connect = (props) => {
 
     const handlebalance = () => {
         const balances = document.querySelector(".balance");
+        const menu = document.querySelector('.menu');
         const arrowup = document.querySelector(".arrowup1");
         const arrowdown = document.querySelector(".arrowdown1");
          if (balances.style.display === "block") {
@@ -36,6 +39,7 @@ const Connect = (props) => {
              arrowdown.style.display = "block";
             } else {      
              balances.style.display = "block";
+             menu.style.display = "none";
              arrowup.style.display = "block";
              arrowdown.style.display = "none";
             }
