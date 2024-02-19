@@ -2,12 +2,20 @@
     {
         "id": 1,
         "election": "2023 Presidential Election",
-        "vote_count": "475,831"
+        "vote_count": "475,831",
+        "days": "01",
+        "hours": 14,
+        "minutes":47,
+        "seconds":52
     },
     {
         "id": 2,
         "election": "2023 Gubernatorial Election",
-        "vote_count": " 238,160"
+        "vote_count": " 238,160",
+        "days": "02",
+        "hours": 22,
+        "minutes":37,
+        "seconds":"05"
 
     }
 

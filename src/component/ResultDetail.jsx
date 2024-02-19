@@ -63,11 +63,11 @@ const CandidateCard = ({win_percent, vote, party}) => {
             <div className='flex justify-between pb-7'>
                 <div>
                     <p className='text-[0.6875rem] font-normal leading-3 mb-2 mt-1 sm:mb-2.5'>Votes</p>
-                    <p className='text-xl font-bold tracking-widest lg:text-2xl'>{vote}</p>
+                    <p className='text-lg md:text-xl font-bold tracking-widest lg:text-2xl'>{vote}</p>
                 </div>
                 <div>
                     <p className='text-[0.6875rem] font-normal leading-3 mb-2.5 mt-1 sm:mb-2.5'>Win Percent</p>
-                    <p className='text-xl font-bold tracking-widest lg:text-2xl'>{win_percent}</p>
+                    <p className='text-lg md:text-xl font-bold tracking-widest lg:text-2xl'>{win_percent}</p>
                 </div>
                 <div>
                      <img src={apc} alt="APC Flag" className='mr-2 sm:w-[95%]'/>

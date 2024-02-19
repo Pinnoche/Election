@@ -27,14 +27,14 @@ const Result = (props) => {
 
 
     return (
-        <div className='py-6 md:py-16 lg:py-24 text-white'>
+        <div className='py-10 md:py-16 lg:py-24 text-white md:min-h-[90vh]'>
             <div onClick={handlecancel} className='cancel hidden pb-2 md:pb-4 mx-auto w-[12px] md:w-[17px] cursor-pointer'>
                 <img src={close} alt="Cancel" />
             </div>
             <div className='resultmain w-[90%] mx-auto bg-[#1D1D1D]/90 px-8 py-6 rounded-md sm:w-[80%] md:w-[70%] lg:w-[77%] xl:w-[65%] sm:py-12'>
                 <div className='flex items-center mb-5 sm:justify-center sm:mb-8 md:mb-10 md:mb-14'>
                     <div className='px-3 py-3 bg-[#F5F5F5] rounded-l-lg sm:rounded-l-xl'>
-                        <img src={search} alt="Search Lens" className='w-[0.8438rem] sm:w-[1rem]'/>
+                        <img src={search} alt="Search Lens" className='w-[0.875rem] sm:w-[1rem]'/>
                     </div>
                     <input type='text' placeholder='Search' className='py-2.5 w-full pl-3 rounded-r-lg text-xs text-black outline-0 sm:w-[75%] md:w-[65%] lg:w-[50%] sm:py-2.5 sm:pl-3.5 sm:text-sm sm:rounded-r-xl'/>
                 </div>

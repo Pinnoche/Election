@@ -8,21 +8,14 @@ import { useState } from "react";
 
 const Election = (props) => {
 
-  
-    
-  
   const [regForm, setregForm] = useState(false);
-
-    const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-  
+  const [attention, setAttention] = useState(false);  
 
 
 
   return (
-    <main className="py-5 px-5 md:py-10 md:px-36 min-h-[60vh]">
-      <div className="relative bg-[#F5F5F5] max-[320px]:w-full w-[85%] md:w-[80%] sm:w-[80%] lg:w-[60%] xl:w-[40%] mx-auto h-[10rem] rounded-md mb-10 text-[#FF0303] hidden">
+    <main className="py-10 px-5 md:py-10 md:px-36 min-h-[90vh]">
+      {attention && <div className="relative bg-[#F5F5F5] max-[320px]:w-full w-[85%] md:w-[80%] sm:w-[80%] lg:w-[60%] xl:w-[40%] mx-auto h-[10rem] rounded-md mb-10 text-[#FF0303]">
         <h3 className="absolute left-12 top-[10%] font-bold tracking-wide">
           Attention!!!
         </h3>
@@ -34,13 +27,15 @@ const Election = (props) => {
           <img
             src={clear}
             alt="clear sign"
-            className="md:w-[1rem] absolute top-[10%] right-[2rem]"
+            className="md:w-[1rem] absolute top-[10%] right-[2rem] cursor-pointer"
+            onClick={() => setAttention(false)}
           />
         </div>
-      </div>
+      </div>}
       <div className={`${regForm === true ? "hidden" : "block"}`}>
           {datas.map((data, id) => (
-              <ElectionDetail onClick={() => setregForm(true)} key={id} setregForm={setregForm} election={data.election} vote_count={data.vote_count}/>
+            <ElectionDetail onClick={() => { setregForm(true); setAttention(false) }} key={id} setregForm={setregForm} election={data.election} vote_count={data.vote_count} days={data.days}
+            hours={data.hours} minutes={data.minutes} seconds={data.seconds}/>
           ))}
 
           <div className="relative bg-gradient-to-r from-[#FDD603] h-[12.625rem] w-full sm:w-[80%] md:w-[80%] lg:w-[50%] h-[12.625rem] lg:h-[16rem] mb-6 hidden rounded-md">
@@ -56,7 +51,7 @@ const Election = (props) => {
       
 
       {regForm && (
-        <FormValidate setregForm={setregForm} />
+        <FormValidate setregForm={setregForm}  setAttention={setAttention} />
       )}  
       
     </main>
@@ -65,12 +60,12 @@ const Election = (props) => {
 
 
 
-const ElectionDetail = ({ election, vote_count, onClick, setregForm}) => {
+const ElectionDetail = ({ election, vote_count, onClick, setregForm, days, hours, minutes, seconds}) => {
 
   return (
       <div>
           <div
-            className={`relative bg-gradient-to-r from-[#FDD603] max-[320px]:w-full w-[85%] sm:w-[80%] md:w-[80%] lg:w-[50%] h-[12.625rem] lg:h-[16rem]  mx-auto mb-6 rounded-md
+            className={`relative bg-gradient-to-r from-[#FDD603] max-[320px]:w-full w-[90%] sm:w-[80%] md:w-[80%] lg:w-[50%] h-[16rem] lg:h-[18rem]  mx-auto mb-6 rounded-md
             `}
           >
             <h1 className="absolute top-4 left-6 lg:left-12 md:left-8 font-bold">{election}</h1>
@@ -84,13 +79,32 @@ const ElectionDetail = ({ election, vote_count, onClick, setregForm}) => {
               </h1>
             </div>
             <div>
-              <p className="absolute top-32 lg:top-36 left-6 lg:left-12 md:left-8 font-light text-sm">
+              <p className="absolute top-[116px] lg:top-36 left-6 lg:left-12 md:left-8 font-light text-xs lg:text-sm">
                 End Time Countdown
-              </p>
+          </p>
+          <div className="absolute top-[148px] lg:top-44 w-[80%] justify-between items-center left-6 lg:left-12 md:left-8 flex">
+            <div className="mr-6">
+              <p className="text-xs lg:text-sm ">Days</p>
+              <p className="font-semibold text-xl lg:">{days}</p>
+            </div>
+            <div className="mr-6">
+              <p className="text-xs lg:text-sm ">Hours</p>
+              <p className="font-semibold text-xl">{hours}</p>
+            </div>
+            <div className="mr-6">
+              <p className="text-xs lg:text-sm ">Minutes</p>
+              <p className="font-semibold text-xl">{minutes}</p>
+            </div>
+            <div className="mr-6">
+              <p className="text-xs lg:text-sm ">Seconds</p>
+              <p className="font-semibold text-xl">{seconds}</p>
+            </div>
+          </div>
+          
             </div>
             <button
               onClick={onClick}
-              className="absolute text-white cursor-pointer bottom-2 py-1 md:py-2 left-6 lg:left-12 md:left-8 w-[80%] bg-gradient-to-l from-blue-950 to-blue-400 rounded-md "
+              className="absolute text-white cursor-pointer bottom-4 py-1.5 md:py-2 left-6 lg:left-12 md:left-8 w-[80%] bg-gradient-to-l from-blue-950 to-blue-400 rounded-md "
             >
               Cast a vote
             </button>
@@ -101,7 +115,7 @@ const ElectionDetail = ({ election, vote_count, onClick, setregForm}) => {
 }
 
 
-const FormValidate = ({setregForm}) => {
+const FormValidate = ({setregForm, setAttention}) => {
 
   const [reg, setReg] = useState("");
   const [vote, setVote] = useState(false);
@@ -109,6 +123,10 @@ const FormValidate = ({setregForm}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!vote) {
+      setregForm(false);  
+      setAttention(true);
+    }
   };
 
   return (
@@ -133,8 +151,9 @@ const FormValidate = ({setregForm}) => {
                   onChange={(e) => setReg(e.target.value)}
                   className="py-2 max-[410px]:w-[70%] w-[80%] outline-0 rounded-lg px-3"
                 />
-                <div
-                  onClick={() => {
+                
+            <input type="submit"
+              onClick={() => {
                     const isRegMatch = regs.some(
                       (regObject) => regObject.reg_num === reg
                     );
@@ -143,12 +162,9 @@ const FormValidate = ({setregForm}) => {
                       setVote(true);
                     } else {
                       setVote(false);
-                    }
-                  }}
-                  className="flex items-center justify-center mt-6 lg:mt-8 text-white cursor-pointer bg-gradient-to-l from-blue-950 to-blue-400 rounded-md"
-                >
-                  <input type="submit" className="cursor-pointer p-2 z-0" />
-                </div>
+              }
+              }}
+              className="block cursor-pointer p-2 z-0 mt-6 lg:mt-8 w-full mx-auto text-white cursor-pointer bg-gradient-to-l from-blue-950 to-blue-400 rounded-lg text-center" />
               </form>
       </div>
       {vote && (
@@ -184,7 +200,7 @@ const Voting = ({setVote, setregForm}) => {
           <h1 className="my-8 ml-8 max-[320px]:text-xs">Select your candidate & proceed ...</h1>
           {details.map((detail, id) => (
             <div
-              className="w-[60%] h-48 bg-black mb-4 mx-[20%] rounded-md"
+              className="w-[60%] h-48 bg-black mb-4 mx-[20%] rounded-md cursor-pointer"
               key={id}
               onClick={() => handleItemClick(id)}
             >
@@ -235,7 +251,7 @@ const Vote = ({ value, name, onClick, setVoting, setVote, setregForm }) => {
             <h1 className="my-2 md:my-4">{value}</h1>
             <img src={apc} alt={name} className="mb-2 md:mb-4 w-24" />
             <p className="mb-4">{name}</p>
-            <button onClick={onClick} className="absolute right-4 bottom-4 text-black font-bold bg-white rounded-md w-24 h-8">
+            <button onClick={onClick} className="absolute right-4 bottom-4 text-black font-bold bg-white rounded-md w-24 h-8 cursor-pointer">
               Cancel
             </button>
             <form
@@ -243,7 +259,7 @@ const Vote = ({ value, name, onClick, setVoting, setVote, setregForm }) => {
               className="flex w-full justify-between px-4 text-black font-bold "
             >
               <input
-                className="absolute bottom-[66px]"
+                className="absolute bottom-[66px] cursor-pointer"
                 type="checkbox"
                 onChange={()=>setCheck(!check)}
                 required
@@ -251,7 +267,7 @@ const Vote = ({ value, name, onClick, setVoting, setVote, setregForm }) => {
               <label className="absolute bottom-[58px] mb-1 left-11 text-white font-normal">
                 verify
               </label>
-              <button className="absolute left-4 bottom-4 bg-yellow-400 rounded-md w-24 h-8">
+              <button className="absolute left-4 bottom-4 bg-yellow-400 rounded-md w-24 h-8 cursor-pointer">
                 Vote
               </button>
             </form>
@@ -266,7 +282,7 @@ const Vote = ({ value, name, onClick, setVoting, setVote, setregForm }) => {
 
           <p className="text-[0.625rem]  font-semibold leading-3 lg:text-xs pb-6 text-center">Your vote has been recorded.</p>
 
-          <button onClick={handleDone} className="block text-black text-[0.625rem]  font-semibold leading-3 w-fit lg:text-xs bg-yellow-400 py-1.5 px-4 rounded-md mx-auto">Done</button>
+          <button onClick={handleDone} className="block text-black text-[0.625rem]  font-semibold leading-3 w-fit lg:text-xs bg-yellow-400 py-1.5 px-4 rounded-md mx-auto cursor-pointer">Done</button>
       </div>}
     </div>
 
