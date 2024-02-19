@@ -173,6 +173,16 @@ const Election = (props) => {
           </div>
         </div>
       )} */}
+
+      <div className="flex bg-[#1D1D1D] w-[40%] h-12">
+        <p>Successful!!!</p>
+
+        <p>Than you for coming!</p>
+
+        <p>Your vote has been recorded.</p>
+
+        <button className="bg-yellow-400 rounded-md w-20 h-8">Done</button>
+      </div>
     </main>
   );
 };
