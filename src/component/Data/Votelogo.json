@@ -1,0 +1,25 @@
+[
+    {
+        "id":1,
+        "value":"A",
+        "banner":"../resources/icons/APC.svg",
+        "name": "APC"
+
+    },
+
+    {
+        "id":2,
+        "value":"B",
+        "banner":"../resources/icons/APC.svg",
+        "name": "APC"
+
+    },
+
+    {
+        "id":3,
+        "value":"C",
+        "banner":"../resources/icons/APC.svg",
+        "name": "APC"
+
+    }
+]

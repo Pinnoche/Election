@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "election": "2023 Presidential Election",
+        "vote_count": "475,831"
+    },
+    {
+        "id": 2,
+        "election": "2023 Gubernatorial Election",
+        "vote_count": " 238,160"
+
+    }
+
+]
